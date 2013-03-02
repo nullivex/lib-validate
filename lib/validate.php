@@ -25,6 +25,7 @@ class Validate {
 	public $data;
 	public $var;
 	public $error = false;
+	static $html = false;
 
 	public static function prime($data){
 		self::$inst = new Validate($data);
@@ -126,7 +127,10 @@ class Validate {
 	}
 
 	public static function paint(){
-		if(self::$inst->error !== false) throw new Exception(nl2br(self::$inst->error));
+		if(self::$inst->error !== false){
+			if(self::$html)	throw new Exception(nl2br(self::$inst->error));
+			else throw new Exception(self::$inst->error);
+		}
 		return true;
 	}
 
