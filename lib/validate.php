@@ -122,6 +122,12 @@ class Validate {
 			case 'email':
 				if(preg_match('/^.+?\@[0-9a-z\-\.]+$/i',trim($this->get()))) return true;
 				break;
+			case 'sha1':
+				if(preg_match('/^[a-z0-9]{40}$/i',trim($this->get()))) return true;
+				break;
+			case 'md5':
+				if(preg_match('/^[a-z0-9]{32}$/i',trim($this->get()))) return true;
+				break;
 		}
 		return $this;
 	}
