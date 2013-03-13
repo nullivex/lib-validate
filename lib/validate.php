@@ -135,7 +135,7 @@ class Validate {
 	public static function paint(){
 		if(self::$inst->error !== false){
 			if(self::$html)	throw new Exception(nl2br(self::$inst->error));
-			else throw new Exception(self::$inst->error);
+			else throw new Exception(trim(self::$inst->error));
 		}
 		return true;
 	}
