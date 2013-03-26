@@ -6,7 +6,7 @@ Validation helper with a shorthand syntax.
 Usage
 ----
 ```php
-ld('validate');
+use \LSS\Validate;
 
 $data = array('myparam'=>'valid string');
 
